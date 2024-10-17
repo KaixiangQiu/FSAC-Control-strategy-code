@@ -1,0 +1,2115 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     finalcode.a2l
+ *
+ * Code generation for model "finalcode".
+ *
+ * Model version              : 1.247
+ * Simulink Coder version : 9.3 (R2020a) 18-Nov-2019
+ * C source code generated on : Thu Oct 17 21:55:11 2024
+ * 
+ * Target selection: ec5744.tlc
+ * Embedded hardware selection: Freescale MPC5500
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+
+ASAP2_VERSION  1 31   /* Version 1.31 */
+
+/begin PROJECT ECUCoderProject "ECUCoder Project"
+  
+  /begin HEADER "Header Comments go here"
+    
+  /end HEADER
+  
+  
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+    
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+      
+    /end MOD_PAR
+    
+    /begin MOD_COMMON  "Mod Common Comment Here" 
+      BYTE_ORDER     MSB_FIRST
+    /end MOD_COMMON
+    
+    /begin RECORD_LAYOUT Scalar_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_SWORD
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin RECORD_LAYOUT Lookup1D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_SLONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT32_IEEE
+      AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT64_IEEE
+      AXIS_PTS_X  1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT    
+    
+    /begin RECORD_LAYOUT Lookup2D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT32_IEEE
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT64_IEEE
+      FNC_VALUES  1  FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT64_IEEE
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      P11111  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001300 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      P22222  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001308 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      PIDmodel  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001310 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      PPPP  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001318 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      TTTTTyouren  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001320 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      T_add  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001328 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      T_del  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001330 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      acc_calmax1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001338 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      acc_calmax2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001340 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      acc_calmin1  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001348 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      acc_calmin2  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001350 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      akemancanshu  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      @MemoryAddress@akemancanshu@ 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      angle_middle  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001358 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      bre  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001360 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      chasuniujvvvv_hou  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001368 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      chasuniujvvvv_qian  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001370 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      chasuuuu  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001378 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      kd  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001380 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      kddd  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001388 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      ki  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001390 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      kiii  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x40001398 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      kp  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x400013a0 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      kppp  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x400013a8 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      slip  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x400013b0 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      slip_big  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x400013b8 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      slip_little  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x400013c0 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      slipmodel  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x400013c8 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      vvvv  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x400013d0 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      zhiling  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x400013d8 
+      /* Record Layout          */      Scalar_FLOAT64_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_double 
+      /* Lower Limit            */      -1.7E+308 
+      /* Upper Limit            */      1.7E+308
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      leftmax  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x400013e0 
+      /* Record Layout          */      Scalar_FLOAT32_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_single 
+      /* Lower Limit            */      -3.4E+38 
+      /* Upper Limit            */      3.4E+38
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      rightmax  
+      /* Long Identifier        */      ""
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x400013e4 
+      /* Record Layout          */      Scalar_FLOAT32_IEEE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      finalcode_CM_single 
+      /* Lower Limit            */      -3.4E+38 
+      /* Upper Limit            */      3.4E+38
+    /end CHARACTERISTIC
+    
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      msk
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001140
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      msd
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001228
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      v_youren
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400011c8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      guiyi
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001220
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      bre_result
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001260
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      acc_result2
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001238
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      acc_result1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001168
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      tttttttt
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001150
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      NT1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001288
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      NT2
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400011e8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      steer_toworkstation
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001270
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      d
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001278
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      zhuanjiaoshuzhi
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400011a0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      zhuanxiang_1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001258
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      zhuanxiang_0
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400012a0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      zhuanxiang
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400012e8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      NT3
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400012b0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      NT_zuohou
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400012c0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      T_zuohou
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001200
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      NT_youhou
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001188
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      T_youhou
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001240
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      NT_youqian
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001160
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      T_youqian
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001180
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      NT_zuoqian
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400011e0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      T_zuoqian
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001230
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      zhuanxiangdianji
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001210
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      steer_bianmaqi_origin
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400011a8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      steer_bianmaqi
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001280
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      steer_workstation
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400012c8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      enable_185
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001178
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      enable_185_1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001290
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      enable_188
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400011c0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      enable_188_1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001208
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      enable_184
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001298
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      enable_184_1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400011f8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      enable_189
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001268
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      enable_189_1
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400011f0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      enable
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400011d8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      v_zuohou
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001248
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      v_youhou
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400012d0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      v_youqian
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x400012d8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      v_zuoqian
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      finalcode_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       0x40001198
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      k
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT32_IEEE
+      /* Conversion method      */      finalcode_CM_single
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3.4E+38
+      /* Upper limit            */      3.4E+38
+      ECU_ADDRESS                       0x400011b4
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      acc_ori_line1
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      finalcode_CM_uint16
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       0x40001158
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      acc_ori_line2
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      finalcode_CM_uint16
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       0x40001190
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      T232
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x40001218
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      T233
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x400012a9
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CANok
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x40001219
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CANOK_20
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x40001250
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CANOK_21
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x400011b8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CANOK_481
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x40001139
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CANOK_81
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x40001148
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CANOK_283
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x400011b1
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CANOK_284
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x400012e0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CANOK_287
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x400012a8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CANOK_288
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x40001149
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CANOK_402
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x400012e1
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CANok_shucai
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x400012b8
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CANOK_08
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x400011d0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      V184
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x400011b0
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      V185
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x40001192
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      V188
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x40001138
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      V189
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      finalcode_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       0x40001170
+    /end MEASUREMENT
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      finalcode_CM_double
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%15.10"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      finalcode_CM_single
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%8.6"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      finalcode_CM_uint16
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      finalcode_CM_uint8
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%3.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin GROUP 
+      /* Name                   */       finalcode
+      /* Long identifier        */       "finalcode"
+      /* Root                    */       ROOT
+      /begin SUB_GROUP
+        Root_Subsystem
+        Root___TX
+        Root_______
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Subsystem
+      /* Long identifier        */       "finalcode/Subsystem"
+      /begin SUB_GROUP
+        S2_Rx
+        S2_Tx
+        S2_run
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root___TX
+      /* Long identifier        */       "finalcode/无人TX"
+      /begin SUB_GROUP
+        S3_Toworkstation
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_______
+      /* Long identifier        */       "finalcode/转向自动标定"
+      /begin SUB_GROUP
+        S4_______
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Rx
+      /* Long identifier        */       "finalcode/Subsystem/Rx"
+      /begin SUB_GROUP
+        S26_283_285__
+        S26_284_286__
+        S26_287_289__
+        S26_288_290__
+        S26____
+        S26_____
+        S26_____receive___
+        S26_ebs
+        S26_lcu__receive
+        S26_shucai_receive
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Tx
+      /* Long identifier        */       "finalcode/Subsystem/Tx"
+      /begin SUB_GROUP
+        S27_Subsystem
+        S27_TX___
+        S27___
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        v_youren
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_run
+      /* Long identifier        */       "finalcode/Subsystem/run"
+      /begin SUB_GROUP
+        S28_analog_input
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S3_Toworkstation
+      /* Long identifier        */       "finalcode/无人TX/Toworkstation"
+      /begin SUB_GROUP
+        S257_toworkstation
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S4_______
+      /* Long identifier        */       "finalcode/转向自动标定/转向自动标定"
+      /begin SUB_GROUP
+        S268_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S26_283_285__
+      /* Long identifier        */       "finalcode/Subsystem/Rx/283 285左前"
+      /begin SUB_GROUP
+        S31_Subsystem2
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CANOK_283
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S26_284_286__
+      /* Long identifier        */       "finalcode/Subsystem/Rx/284 286右前"
+      /begin SUB_GROUP
+        S32_Subsystem2
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CANOK_284
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S26_287_289__
+      /* Long identifier        */       "finalcode/Subsystem/Rx/287 289右后"
+      /begin SUB_GROUP
+        S33_Subsystem3
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CANOK_287
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S26_288_290__
+      /* Long identifier        */       "finalcode/Subsystem/Rx/288 290左后"
+      /begin SUB_GROUP
+        S34_Subsystem2
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CANOK_288
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S26_ebs
+      /* Long identifier        */       "finalcode/Subsystem/Rx/ebs"
+      /begin REF_MEASUREMENT
+        CANOK_402
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S26_lcu__receive
+      /* Long identifier        */       "finalcode/Subsystem/Rx/lcu——receive"
+      /begin SUB_GROUP
+        S36_Subsystem1
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CANok
+        enable_184
+        enable_184_1
+        enable_185
+        enable_185_1
+        enable_188
+        enable_188_1
+        enable_189
+        enable_189_1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S26_shucai_receive
+      /* Long identifier        */       "finalcode/Subsystem/Rx/shucai—receive"
+      /begin REF_MEASUREMENT
+        CANok_shucai
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S26____
+      /* Long identifier        */       "finalcode/Subsystem/Rx/工作站"
+      /begin SUB_GROUP
+        S38_Subsystem3
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CANOK_20
+        CANOK_21
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S26_____receive___
+      /* Long identifier        */       "finalcode/Subsystem/Rx/转向——receive编码器"
+      /begin SUB_GROUP
+        S39_Subsystem3
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CANOK_08
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S26_____
+      /* Long identifier        */       "finalcode/Subsystem/Rx/转向电机"
+      /begin SUB_GROUP
+        S40_Subsystem3
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CANOK_481
+        CANOK_81
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S27_Subsystem
+      /* Long identifier        */       "finalcode/Subsystem/Tx/Subsystem"
+      /begin REF_CHARACTERISTIC
+        P11111
+        P22222
+        PPPP
+        TTTTTyouren
+        vvvv
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S27_TX___
+      /* Long identifier        */       "finalcode/Subsystem/Tx/TX控制器"
+      /begin SUB_GROUP
+        S116_Subsystem1
+        S116______
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S27___
+      /* Long identifier        */       "finalcode/Subsystem/Tx/转向"
+      /begin SUB_GROUP
+        S118_____
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        angle_middle
+        kd
+        kddd
+        ki
+        kiii
+        kp
+        kppp
+        leftmax
+        rightmax
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        zhuanxiang
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S28_analog_input
+      /* Long identifier        */       "finalcode/Subsystem/run/analog_input"
+      /begin SUB_GROUP
+        S216___
+        S216_______
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S257_toworkstation
+      /* Long identifier        */       "finalcode/无人TX/Toworkstation/toworkstation"
+      /begin SUB_GROUP
+        S259_toworkstation
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S268_Subsystem
+      /* Long identifier        */       "finalcode/转向自动标定/转向自动标定/Subsystem"
+      /begin REF_MEASUREMENT
+        msd
+        msk
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S31_Subsystem2
+      /* Long identifier        */       "finalcode/Subsystem/Rx/283 285左前/Subsystem2"
+      /begin SUB_GROUP
+        S42_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S32_Subsystem2
+      /* Long identifier        */       "finalcode/Subsystem/Rx/284 286右前/Subsystem2"
+      /begin SUB_GROUP
+        S47_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S33_Subsystem3
+      /* Long identifier        */       "finalcode/Subsystem/Rx/287 289右后/Subsystem3"
+      /begin SUB_GROUP
+        S52_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S34_Subsystem2
+      /* Long identifier        */       "finalcode/Subsystem/Rx/288 290左后/Subsystem2"
+      /begin SUB_GROUP
+        S57_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S36_Subsystem1
+      /* Long identifier        */       "finalcode/Subsystem/Rx/lcu——receive/Subsystem1"
+      /begin SUB_GROUP
+        S74_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S38_Subsystem3
+      /* Long identifier        */       "finalcode/Subsystem/Rx/工作站/Subsystem3"
+      /begin SUB_GROUP
+        S86_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S39_Subsystem3
+      /* Long identifier        */       "finalcode/Subsystem/Rx/转向——receive编码器/Subsystem3"
+      /begin SUB_GROUP
+        S100_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S40_Subsystem3
+      /* Long identifier        */       "finalcode/Subsystem/Rx/转向电机/Subsystem3"
+      /begin SUB_GROUP
+        S108_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S116_Subsystem1
+      /* Long identifier        */       "finalcode/Subsystem/Tx/TX控制器/Subsystem1"
+      /begin REF_CHARACTERISTIC
+        akemancanshu
+        chasuuuu
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S116______
+      /* Long identifier        */       "finalcode/Subsystem/Tx/TX控制器/控制器发送"
+      /begin SUB_GROUP
+        S120_184__1
+        S120_185__1
+        S120_188__1
+        S120_189__1
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        chasuniujvvvv_hou
+        chasuniujvvvv_qian
+      /end REF_CHARACTERISTIC
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S118_____
+      /* Long identifier        */       "finalcode/Subsystem/Tx/转向/转向换算"
+      /begin SUB_GROUP
+        S199_Subsystem
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        zhuanxiang_0
+        zhuanxiang_1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S216_______
+      /* Long identifier        */       "finalcode/Subsystem/run/analog_input/无人意图转译"
+      /begin SUB_GROUP
+        S225___
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S216___
+      /* Long identifier        */       "finalcode/Subsystem/run/analog_input/有人"
+      /begin SUB_GROUP
+        S226_Subsystem1
+        S226_____
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S259_toworkstation
+      /* Long identifier        */       "finalcode/无人TX/Toworkstation/toworkstation/toworkstation"
+      /begin REF_MEASUREMENT
+        T232
+        T233
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S42_Subsystem
+      /* Long identifier        */       "finalcode/Subsystem/Rx/283 285左前/Subsystem2/Subsystem"
+      /begin REF_MEASUREMENT
+        v_zuoqian
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S47_Subsystem
+      /* Long identifier        */       "finalcode/Subsystem/Rx/284 286右前/Subsystem2/Subsystem"
+      /begin REF_MEASUREMENT
+        v_youqian
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S52_Subsystem
+      /* Long identifier        */       "finalcode/Subsystem/Rx/287 289右后/Subsystem3/Subsystem"
+      /begin REF_MEASUREMENT
+        v_youhou
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S57_Subsystem
+      /* Long identifier        */       "finalcode/Subsystem/Rx/288 290左后/Subsystem2/Subsystem"
+      /begin REF_MEASUREMENT
+        v_zuohou
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S74_Subsystem
+      /* Long identifier        */       "finalcode/Subsystem/Rx/lcu——receive/Subsystem1/Subsystem"
+      /begin REF_MEASUREMENT
+        enable
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S86_Subsystem
+      /* Long identifier        */       "finalcode/Subsystem/Rx/工作站/Subsystem3/Subsystem"
+      /begin REF_MEASUREMENT
+        steer_workstation
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S100_Subsystem
+      /* Long identifier        */       "finalcode/Subsystem/Rx/转向——receive编码器/Subsystem3/Subsystem"
+      /begin REF_MEASUREMENT
+        steer_bianmaqi
+        steer_bianmaqi_origin
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S108_Subsystem
+      /* Long identifier        */       "finalcode/Subsystem/Rx/转向电机/Subsystem3/Subsystem"
+      /begin REF_MEASUREMENT
+        zhuanxiangdianji
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S120_184__1
+      /* Long identifier        */       "finalcode/Subsystem/Tx/TX控制器/控制器发送/184左前1"
+      /begin SUB_GROUP
+        S131_________
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        slip
+        slip_big
+        slip_little
+        slipmodel
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        NT_zuoqian
+        T_zuoqian
+        V184
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S120_185__1
+      /* Long identifier        */       "finalcode/Subsystem/Tx/TX控制器/控制器发送/185右前1"
+      /begin REF_CHARACTERISTIC
+        slip
+        slip_big
+        slip_little
+        slipmodel
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        NT_youqian
+        T_youqian
+        V185
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S120_188__1
+      /* Long identifier        */       "finalcode/Subsystem/Tx/TX控制器/控制器发送/188右后1"
+      /begin REF_CHARACTERISTIC
+        slip
+        slip_big
+        slip_little
+        slipmodel
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        NT_youhou
+        T_youhou
+        V188
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S120_189__1
+      /* Long identifier        */       "finalcode/Subsystem/Tx/TX控制器/控制器发送/189左后1"
+      /begin REF_CHARACTERISTIC
+        slip
+        slip_big
+        slip_little
+        slipmodel
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        NT_zuohou
+        T_zuohou
+        V189
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S199_Subsystem
+      /* Long identifier        */       "finalcode/Subsystem/Tx/转向/转向换算/Subsystem"
+      /begin REF_CHARACTERISTIC
+        PIDmodel
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        d
+        k
+        steer_toworkstation
+        zhuanjiaoshuzhi
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S225___
+      /* Long identifier        */       "finalcode/Subsystem/run/analog_input/无人意图转译/无人"
+      /begin SUB_GROUP
+        S227_Subsystem1
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S226_Subsystem1
+      /* Long identifier        */       "finalcode/Subsystem/run/analog_input/有人/Subsystem1"
+      /begin REF_CHARACTERISTIC
+        T_add
+        T_del
+        zhiling
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        tttttttt
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S226_____
+      /* Long identifier        */       "finalcode/Subsystem/run/analog_input/有人/踏板标定"
+      /begin SUB_GROUP
+        S242_________ArithmeticAverage1
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        acc_calmax1
+        acc_calmax2
+        acc_calmin1
+        acc_calmin2
+        bre
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        acc_ori_line1
+        acc_ori_line2
+        acc_result1
+        acc_result2
+        bre_result
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S131_________
+      /* Long identifier        */       "finalcode/Subsystem/Tx/TX控制器/控制器发送/184左前1/能量回收功率限制"
+      /begin REF_MEASUREMENT
+        NT3
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S227_Subsystem1
+      /* Long identifier        */       "finalcode/Subsystem/run/analog_input/无人意图转译/无人/Subsystem1"
+      /begin SUB_GROUP
+        S229__________
+        S229__esc____
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S242_________ArithmeticAverage1
+      /* Long identifier        */       "finalcode/Subsystem/run/analog_input/有人/踏板标定/算术平均值滤波 ArithmeticAverage1"
+      /begin REF_MEASUREMENT
+        guiyi
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S229__________
+      /* Long identifier        */       "finalcode/Subsystem/run/analog_input/无人意图转译/无人/Subsystem1/计算四轮各自制动力"
+      /begin REF_MEASUREMENT
+        NT2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S229__esc____
+      /* Long identifier        */       "finalcode/Subsystem/run/analog_input/无人意图转译/无人/Subsystem1/进esc控制策略"
+      /begin REF_MEASUREMENT
+        NT1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    
+  /end MODULE
+  
+  
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF finalcode.a2l */
